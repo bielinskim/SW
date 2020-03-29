@@ -1,7 +1,9 @@
+
+
 void setup()
 {
 	DDRD = B11000111;
-	PIND = B00111000;
+	PORTD = B00111000;
    DDRB = B11111111;
 	PORTB = B11110111;
 
@@ -11,19 +13,24 @@ void setup()
 void loop()
 {
   
-  if(bitRead(PIND, 5)  == 0) {
+  if(!bitRead(PIND, 5)) {
   	 Serial.println("1");
-    reset();
+    PIND = B00111000;
+   
   }
-  if(bitRead(PIND, 4)  == 0) {
+  if(!bitRead(PIND, 4)) 
+   {
   	 Serial.println("2");
-    reset();
+    PIND = B00111000;
+    
   }
-  if(bitRead(PIND, 3)  == 0) {
+  if(!bitRead(PIND, 3)) {
   	 Serial.println("3");
-    reset();
+    PIND = B00111000;
+ 
   }
 }
+
 
 void reset() {
   PORTB = B11110111;
