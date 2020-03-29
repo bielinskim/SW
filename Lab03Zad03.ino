@@ -30,9 +30,3 @@ void loop()
  
   }
 }
-
-
-void reset() {
-  PORTB = B11110111;
-  PIND = B00111000;
-}
